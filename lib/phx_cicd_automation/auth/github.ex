@@ -23,5 +23,16 @@ defmodule PhxCicdAutomation.Auth.Github do
     |> OAuth2.Client.get_token!(code: code)
   end
 
+  def fetch_repos(token) do
+    headers = [{"Authorization", "Bearer #{token}"}]
+    url = "#{@github_api}/user/repos?per_page=100"
 
+    case HTTPoison.get(url, headers) do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        {:ok, Jason.decode!(body)}
+
+      {:error, reason} ->
+        {:error, reason}
+    end
+  end
 end
