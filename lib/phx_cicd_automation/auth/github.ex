@@ -12,4 +12,16 @@ defmodule PhxCicdAutomation.Auth.Github do
     )
   end
 
+  def authorize_url do
+    client()
+    # Access to private repos
+    |> OAuth2.Client.authorize_url!(scope: "repo")
+  end
+
+  def get_token(code) do
+    client()
+    |> OAuth2.Client.get_token!(code: code)
+  end
+
+
 end
