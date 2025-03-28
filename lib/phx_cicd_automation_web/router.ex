@@ -24,6 +24,7 @@ defmodule PhxCicdAutomationWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/repos", AuthController, :list_repos
   end
 
   # Other scopes may use custom stacks.
