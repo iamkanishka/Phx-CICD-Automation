@@ -60,6 +60,8 @@ defmodule PhxCicdAutomation.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:oauth2, "~> 2.0"},
+      {:httpoison, "~> 2.2"},
+
 
     ]
   end
