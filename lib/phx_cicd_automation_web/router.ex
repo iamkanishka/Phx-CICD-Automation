@@ -14,6 +14,12 @@ defmodule PhxCicdAutomationWeb.Router do
     plug :accepts, ["json"]
   end
 
+
+  scope "/auth", MyAppWeb do
+    get "/github", AuthController, :request
+    get "/github/callback", AuthController, :callback
+  end
+
   scope "/", PhxCicdAutomationWeb do
     pipe_through :browser
 
