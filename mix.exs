@@ -60,6 +60,7 @@ defmodule PhxCicdAutomation.MixProject do
       {:bandit, "~> 1.5"},
       {:oauth2, "~> 2.0"},
       {:httpoison, "~> 2.2"},
+      {:jason, "~> 1.4"}
 
 
 
