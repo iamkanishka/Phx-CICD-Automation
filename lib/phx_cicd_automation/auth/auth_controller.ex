@@ -20,5 +20,19 @@ defmodule PhxCicdAutomation.Auth.AuthController do
     end
   end
 
+  def list_repos(conn, _params) do
+    token = get_session(conn, :github_token)
+
+    case GitHub.fetch_repos(token) do
+      {:ok, repos} ->
+        json(conn, repos)
+
+      {:error, _reason} ->
+        conn
+        |> put_flash(:error, "Failed to fetch repositories.")
+        |> redirect(to: "/")
+    end
+  end
+
 
 end
