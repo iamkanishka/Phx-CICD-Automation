@@ -34,4 +34,15 @@ defmodule PhxCicdAutomationWeb.UploadLive do
         {:noreply, assign(socket, error: "File read failed: #{reason}")}
     end
   end
+
+
+  def handle_event("get_upload_url", %{"filename" => filename}, socket) do
+    s3_key = "uploads/#{filename}"
+    # url = generate_presigned_upload_url(s3_key)
+    {:noreply,
+      socket
+    # assign(socket, presigned_url: url)
+  }
+  end
+
 end
