@@ -63,6 +63,7 @@ defmodule PhxCicdAutomation.MixProject do
       {:jason, "~> 1.4"},
       {:ex_aws, "~> 2.5"},
       {:ex_aws_s3, "~> 2.4"},
+      {:sweet_xml, "~> 0.7"},
 
 
 
