@@ -62,6 +62,7 @@ defmodule PhxCicdAutomation.MixProject do
       {:httpoison, "~> 2.2"},
       {:jason, "~> 1.4"},
       {:ex_aws, "~> 2.5"},
+      {:ex_aws_s3, "~> 2.4"},
 
 
 
