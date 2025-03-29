@@ -1,6 +1,15 @@
 import Config
 
 
+config :ex_aws,
+  json_codec: Jason
+
+config :ex_aws, :s3,
+  region: "us-east-1",
+  access_key_id: System.get_env("AWS_ACCESS_KEY_ID"),
+  secret_access_key: System.get_env("AWS_SECRET_ACCESS_KEY")
+
+
 config :my_app, PhxCicdAutomation.Auth.Github,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET"),
