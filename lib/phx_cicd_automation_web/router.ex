@@ -1,4 +1,5 @@
 defmodule PhxCicdAutomationWeb.Router do
+  alias PhxCicdAutomation.Auth.AuthController
   use PhxCicdAutomationWeb, :router
 
   pipeline :browser do
@@ -14,7 +15,6 @@ defmodule PhxCicdAutomationWeb.Router do
     plug :accepts, ["json"]
   end
 
-
   scope "/auth", MyAppWeb do
     get "/github", AuthController, :request
     get "/github/callback", AuthController, :callback
@@ -25,6 +25,7 @@ defmodule PhxCicdAutomationWeb.Router do
 
     get "/", PageController, :home
     get "/repos", AuthController, :list_repos
+    post "/upload", UploadController, :upload
   end
 
   # Other scopes may use custom stacks.
